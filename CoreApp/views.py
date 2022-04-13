@@ -11,18 +11,21 @@ import os
 from PIL import Image
 import sys
 import time
-
-
+import uuid
+import base64
 # Create your views here.
 @csrf_exempt
 def mainApp(request):
     key = request.POST['subs_key']
     endpoint = request.POST['endpoint']
+    img = request.post['imgData']
+
     subscription_key = key
     endpoint = endpoint
     computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
 
-    
+
+
     read_image_url = "https://s3.jagoanstorage.com/aditia-storage/asset/ktp_bg_anul.jpg"
 
     # Call API with URL and raw response (allows you to get the operation location)
