@@ -4,6 +4,6 @@ from django.urls import path
 from CoreApp import views as CoreApp
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', CoreApp.homePage),
     path('core-app', CoreApp.mainApp)
 ]

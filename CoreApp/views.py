@@ -20,6 +20,11 @@ from botocore.exceptions import NoCredentialsError
 
 
 # Create your views here.
+def homePage(request):
+    context = {
+        'message' : 'Selamat datang di text recognition server'
+    }
+    return JsonResponse(context, safe=False)
 @csrf_exempt
 def mainApp(request):
     key = request.POST['subs_key']
